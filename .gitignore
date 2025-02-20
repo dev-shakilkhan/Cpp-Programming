@@ -1,2 +1,6 @@
-*.exe
+# Ignore all executable files (no extension)
+*
+!*/
+!*.cpp*
+*.executable
 *.vscode

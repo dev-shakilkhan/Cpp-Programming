@@ -1,7 +1,4 @@
-#include <iostream>
-using namespace std;
-
-// class person
+class person
 // {
 // public:
 //     int id;
@@ -23,10 +20,3 @@ using namespace std;
 //          << p1.name << endl
 //          << p1.mail << endl;
 // }
-
-int main(){
-    int id = 4124020235;
-    cout<< id<<endl;
-
-    return 0;
-}
