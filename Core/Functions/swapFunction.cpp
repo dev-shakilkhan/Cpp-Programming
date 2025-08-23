@@ -1,32 +1,36 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 using namespace std;
 
-template<typename a, typename b>
-void swapp( a &x, b &y){
-    double z = x;
+// Generic template for swapping
+template <typename T>
+void swapp(T &x, T &y) {
+    T temp = x;
     x = y;
-    y = z;
+    y = temp;
 }
 
-template<>
-void swapp<string>(string a, string b){
-    string c = a;
+// Specialization for string
+template <>
+void swapp<string>(string &a, string &b) {
+    string temp = a;
     a = b;
-    b = a;
+    b = temp;
 }
 
-int main(){
-    int x = 20;
-    int y = 50;
+int main() {
+    int x = 20, y = 50;
     string firstName = "Shakil";
     string lastName = "Khan";
-    string name = firstName + lastName;
-    cout<<"x = "<<x<< "and y = "<<y<<endl;
-    cout<< name;
-    swapp(x,y);
+
+    cout << "Before swap: x = " << x << ", y = " << y << endl;
+    cout << "Before swap: firstName = " << firstName << ", lastName = " << lastName << endl;
+
+    swapp(x, y);
     swapp(firstName, lastName);
-    cout<<"x = "<<x<< "and y = "<<y<<endl;
-    cout<< name;
+
+    cout << "After swap: x = " << x << ", y = " << y << endl;
+    cout << "After swap: firstName = " << firstName << ", lastName = " << lastName << endl;
+
     return 0;
 }
